@@ -138,7 +138,28 @@ $('document').ready(function(){
 		});
 	});
 
+		// Add event listener for "Gift" button
+	$("#show_gift").click(function() {
+	    // Hide the cake
+	    $(".cake").fadeOut();
+	    // Display the photos
+	    displayPhotos();
+	});
+	
+	// Function to display the photos
+	function displayPhotos() {
+	    // Assuming you have a container for photos with id "photo_container"
+	    $("#photo_container").html(`
+	        <img src="Q版无水印.jpg" alt="Q版无水印">
+	        <img src="Q版有水印.jpg" alt="Q版有水印">
+	        <img src="有水印.jpg" alt="有水印">
+	        <img src="无水印.jpg" alt="无水印">
+	    `);
+	}
 
+
+
+	
 	$('#wish_message').click(function(){
 		 vw = $(window).width()/2;
 
