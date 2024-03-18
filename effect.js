@@ -193,24 +193,20 @@ $(document).ready(function(){
         msgLoop(0);
 
         // 添加的部分
-        $('#story').promise().done(function(){
-            setTimeout(function() {
-                $('#story').after('<div class="photos"></div>');
-                $('.photos').append('<img class="photo" src="Q版无水印.jpg" alt="Q版无水印">');
-                $('.photos').append('<img class="photo" src="Q版有水印.jpg" alt="Q版有水印">');
-                $('.photos').append('<img class="photo" src="有水印.jpg" alt="有水印">');
-                $('.photos').append('<img class="photo" src="无水印.jpg" alt="无水印">');
+        setTimeout(function() {
+            // 创建包含照片的滑块
+            $('#story').after('<div class="slideshow"></div>');
+            $('.slideshow').append('<img class="photo" src="Q版无水印.jpg" alt="Q版无水印">');
+            $('.slideshow').append('<img class="photo" src="Q版有水印.jpg" alt="Q版有水印">');
+            $('.slideshow').append('<img class="photo" src="有水印.jpg" alt="有水印">');
+            $('.slideshow').append('<img class="photo" src="无水印.jpg" alt="无水印">');
 
-                // 计算图片居中位置
-                var photosWidth = $('.photos').width();
-                var windowWidth = $(window).width();
-                var marginLeft = (windowWidth - photosWidth) / 2;
-                $('.photos').css('margin-left', marginLeft + 'px');
-
-                // 设置图片尺寸
-                $('.photo').css('width', '200px'); // 设置图片宽度为200像素
-                $('.photo').css('height', 'auto'); // 自动计算高度，保持比例
-            }, 10000); // 添加10秒延迟
-        });
+            // 设置照片样式
+            $('.photo').css('display', 'block'); // 设置照片为块级元素
+            $('.photo').css('margin', 'auto'); // 设置居中
+            $('.photo').css('margin-top', '20px'); // 设置上方留白
+            $('.photo').css('width', '400px'); // 设置宽度
+            $('.photo').css('height', 'auto'); // 自动调整高度，保持比例
+        }, 10000); // 添加10秒延迟
     });
 });
