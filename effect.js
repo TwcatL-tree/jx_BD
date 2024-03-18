@@ -193,21 +193,49 @@ $(document).ready(function(){
         msgLoop(0);
 
         setTimeout(function() {
-            // 创建包含照片的容器
-            $('#story').after('<div class="photo-container"></div>');
-            // 在容器中添加照片
-            $('.photo-container').append('<img class="photo1" src="Q版无水印.jpg" alt="Q版无水印">');
-            $('.photo-container').append('<img class="photo2" src="Q版有水印.jpg" alt="Q版有水印">');
-            $('.photo-container').append('<img class="photo3" src="有水印.jpg" alt="有水印">');
-            $('.photo-container').append('<img class="photo4" src="无水印.jpg" alt="无水印">');
+            // 创建包含照片的滑块
+            $('#story').after('<div class="slideshow"></div>');
+            $('.slideshow').css({
+                'position': 'absolute',
+                'top': '50%',
+                'left': '50%',
+                'transform': 'translate(-50%, -50%)',
+                'width': '80%', // 调整滑块宽度以适应屏幕
+                'overflow-y': 'scroll', // 垂直滚动条
+                'overflow-x': 'hidden' // 隐藏水平滚动条
+            });
+            $('.slideshow').append('<img class="photo1" src="Q版无水印.jpg" alt="Q版无水印">');
+            $('.slideshow').append('<img class="photo2" src="Q版有水印.jpg" alt="Q版有水印">');
+            $('.slideshow').append('<img class="photo3" src="有水印.jpg" alt="有水印">');
+            $('.slideshow').append('<img class="photo4" src="无水印.jpg" alt="无水印">');
         
-            // 设置照片容器样式
-            $('.photo-container').css('position', 'absolute').css('top', '50%').css('left', '50%').css('transform', 'translate(-50%, -50%)').css('text-align', 'center');
             // 设置照片样式
-            $('.photo-container img').css('margin', '10px').css('max-width', '90%').css('height', 'auto');
-            // 启用滚动条以查看超出页面的部分
-            $('.photo-container').css('overflow-y', 'scroll').css('max-height', '80%');
+            $('.photo1').css({
+                'width': '100%', // 图片宽度占滑块宽度的100%
+                'height': 'auto', // 高度自适应
+                'display': 'block',
+                'margin': '0 auto' // 水平居中对齐
+            });
+            $('.photo2').css({
+                'width': '100%',
+                'height': 'auto',
+                'display': 'block',
+                'margin': '20px auto' // 上下间距20px，水平居中对齐
+            });
+            $('.photo3').css({
+                'width': '100%',
+                'height': 'auto',
+                'display': 'block',
+                'margin': '20px auto' // 上下间距20px，水平居中对齐
+            });
+            $('.photo4').css({
+                'width': '100%',
+                'height': 'auto',
+                'display': 'block',
+                'margin': '20px auto' // 上下间距20px，水平居中对齐
+            });
         }, 10000);
+
 
     });
 });
