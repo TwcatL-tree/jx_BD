@@ -202,10 +202,10 @@ $(document).ready(function(){
             $('.slideshow').append('<img class="photo4" src="无水印.jpg" alt="无水印">');
 
             // 设置照片样式
-            $('.photo1').css('display', 'block').css('margin', 'auto').css('margin-top', '20px').css('width', '400px').css('height', 'auto');
-            $('.photo2').css('display', 'block').css('margin', 'auto').css('margin-top', '20px').css('width', '400px').css('height', 'auto');
-            $('.photo3').css('display', 'block').css('margin', 'auto').css('margin-top', '20px').css('width', '400px').css('height', 'auto');
-            $('.photo4').css('display', 'block').css('margin', 'auto').css('margin-top', '20px').css('width', '400px').css('height', 'auto');
+            $('.photo1').css('position', 'fixed').css('top', '20px').css('left', '20px').css('width', '300px').css('height', 'auto');
+            $('.photo2').css('position', 'fixed').css('top', '20px').css('right', '20px').css('width', '300px').css('height', 'auto');
+            $('.photo3').css('position', 'fixed').css('bottom', '20px').css('left', '20px').css('width', '300px').css('height', 'auto');
+            $('.photo4').css('position', 'fixed').css('bottom', '20px').css('right', '20px').css('width', '300px').css('height', 'auto');
         }, 10000); // 添加10秒延迟
     });
 });
