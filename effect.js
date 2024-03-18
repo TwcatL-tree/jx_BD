@@ -195,22 +195,25 @@ $(document).ready(function() {
         msgLoop(0);
 
     });
+});
 
-    $('#show_gift').click(function() {
-        // 隐藏蛋糕
-        $('.cake').fadeOut('slow');
 
-        // 清空原有内容
-        $('#gift_container').empty();
 
-        // 添加照片
-        var images = ['Q版无水印.jpg', 'Q版有水印.jpg', '有水印.jpg', '无水印.jpg'];
-        for (var i = 0; i < images.length; i++) {
-            var img = $('<img>').attr('src', images[i]);
-            $('#gift_container').append(img);
-        }
 
-        // 显示照片容器
-        $('#gift_container').fadeIn('slow');
-    });
+$('#show_gift').click(function() {
+    // 隐藏蛋糕
+    $('.cake').fadeOut('slow');
+
+    // 清空原有内容
+    $('#gift_container').empty();
+
+    // 添加照片
+    var images = ['Q版无水印.jpg', 'Q版有水印.jpg', '有水印.jpg', '无水印.jpg'];
+    for (var i = 0; i < images.length; i++) {
+        var img = $('<img>').attr('src', images[i]);
+        $('#gift_container').append(img);
+    }
+
+    // 显示照片容器
+    $('#gift_container').fadeIn('slow');
 });
