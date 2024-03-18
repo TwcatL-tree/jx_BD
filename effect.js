@@ -192,20 +192,22 @@ $(document).ready(function(){
 
         msgLoop(0);
 
-        // 添加的部分
         setTimeout(function() {
-            // 创建包含照片的滑块
-            $('#story').after('<div class="slideshow"></div>');
-            $('.slideshow').append('<img class="photo1" src="Q版无水印.jpg" alt="Q版无水印">');
-            $('.slideshow').append('<img class="photo2" src="Q版有水印.jpg" alt="Q版有水印">');
-            $('.slideshow').append('<img class="photo3" src="有水印.jpg" alt="有水印">');
-            $('.slideshow').append('<img class="photo4" src="无水印.jpg" alt="无水印">');
-
+            // 创建包含照片的容器
+            $('#story').after('<div class="photo-container"></div>');
+            // 在容器中添加照片
+            $('.photo-container').append('<img class="photo1" src="Q版无水印.jpg" alt="Q版无水印">');
+            $('.photo-container').append('<img class="photo2" src="Q版有水印.jpg" alt="Q版有水印">');
+            $('.photo-container').append('<img class="photo3" src="有水印.jpg" alt="有水印">');
+            $('.photo-container').append('<img class="photo4" src="无水印.jpg" alt="无水印">');
+        
+            // 设置照片容器样式
+            $('.photo-container').css('position', 'absolute').css('top', '50%').css('left', '50%').css('transform', 'translate(-50%, -50%)').css('text-align', 'center');
             // 设置照片样式
-            $('.photo1').css('position', 'fixed').css('top', '20%').css('left', '40%').css('width', '400px').css('height', 'auto');
-            $('.photo2').css('position', 'fixed').css('top', '20%').css('right', '40%').css('width', '400px').css('height', 'auto');
-            $('.photo3').css('position', 'fixed').css('bottom', '40%').css('left', '40%').css('width', '400px').css('height', 'auto');
-            $('.photo4').css('position', 'fixed').css('bottom', '40%').css('right', '40%').css('width', '400px').css('height', 'auto');
-        }, 10000); // 添加10秒延迟
+            $('.photo-container img').css('margin', '10px').css('max-width', '90%').css('height', 'auto');
+            // 启用滚动条以查看超出页面的部分
+            $('.photo-container').css('overflow-y', 'scroll').css('max-height', '80%');
+        }, 10000);
+
     });
 });
