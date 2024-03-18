@@ -1,23 +1,23 @@
-$(window).load(function(){
+$(window).load(function() {
     $('.loading').fadeOut('fast');
     $('.container').fadeIn('fast');
 });
 
-$(document).ready(function(){
+$(document).ready(function() {
     var vw;
-    $(window).resize(function(){
-        vw = $(window).width()/2;
+    $(window).resize(function() {
+        vw = $(window).width() / 2;
         $('#b1,#b2,#b3,#b4,#b5,#b6,#b7').stop();
-        $('#b11').animate({top:240, left: vw-350},500);
-        $('#b22').animate({top:240, left: vw-250},500);
-        $('#b33').animate({top:240, left: vw-150},500);
-        $('#b44').animate({top:240, left: vw-50},500);
-        $('#b55').animate({top:240, left: vw+50},500);
-        $('#b66').animate({top:240, left: vw+150},500);
-        $('#b77').animate({top:240, left: vw+250},500);
+        $('#b11').animate({ top: 240, left: vw - 350 }, 500);
+        $('#b22').animate({ top: 240, left: vw - 250 }, 500);
+        $('#b33').animate({ top: 240, left: vw - 150 }, 500);
+        $('#b44').animate({ top: 240, left: vw - 50 }, 500);
+        $('#b55').animate({ top: 240, left: vw + 50 }, 500);
+        $('#b66').animate({ top: 240, left: vw + 150 }, 500);
+        $('#b77').animate({ top: 240, left: vw + 250 }, 500);
     });
 
-    $('#turn_on').click(function(){
+    $('#turn_on').click(function() {
         $('#bulb_yellow').addClass('bulb-glow-yellow');
         $('#bulb_red').addClass('bulb-glow-red');
         $('#bulb_blue').addClass('bulb-glow-blue');
@@ -25,7 +25,7 @@ $(document).ready(function(){
         $('#bulb_pink').addClass('bulb-glow-pink');
         $('#bulb_orange').addClass('bulb-glow-orange');
         $('body').addClass('peach');
-        $(this).fadeOut('slow').delay(5000).promise().done(function(){
+        $(this).fadeOut('slow').delay(5000).promise().done(function() {
             $('#play').fadeIn('slow');
         });
     });
@@ -196,14 +196,21 @@ $(document).ready(function(){
 
     });
 
-    $('#gift').click(function(){
-        $('.cake').fadeOut('slow').promise().done(function(){
-            $('#photo_container').html(`
-                <img src="Q版无水印.jpg" width="300" height="300">
-                <img src="Q版有水印.jpg" width="300" height="300">
-                <img src="有水印.jpg" width="300" height="300">
-                <img src="无水印.jpg" width="300" height="300">
-            `);
-        });
+    $('#show_gift').click(function() {
+        // 隐藏蛋糕
+        $('.cake').fadeOut('slow');
+
+        // 清空原有内容
+        $('#gift_container').empty();
+
+        // 添加照片
+        var images = ['Q版无水印.jpg', 'Q版有水印.jpg', '有水印.jpg', '无水印.jpg'];
+        for (var i = 0; i < images.length; i++) {
+            var img = $('<img>').attr('src', images[i]);
+            $('#gift_container').append(img);
+        }
+
+        // 显示照片容器
+        $('#gift_container').fadeIn('slow');
     });
 });
