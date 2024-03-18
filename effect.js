@@ -164,6 +164,7 @@ $(document).ready(function(){
 		$('.cake').fadeOut('fast').promise().done(function(){
 			$('.message').fadeIn('slow');
 		});
+		 $('#painting').fadeIn('slow');
 
 		var i;
 
