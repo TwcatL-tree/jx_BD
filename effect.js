@@ -193,23 +193,18 @@ $(document).ready(function(){
 		msgLoop(0);
 
 		// 添加的部分
-		$('.container').append('<div class="photos"></div>');
-		$('.photos').append('<img src="Q版无水印.jpg" alt="Q版无水印">');
-		$('.photos').append('<img src="Q版有水印.jpg" alt="Q版有水印">');
-		$('.photos').append('<img src="有水印.jpg" alt="有水印">');
-		$('.photos').append('<img src="无水印.jpg" alt="无水印">');
-		$('.photos').css({
-			'position': 'absolute',
-			'top': '50%',
-			'left': '50%',
-			'transform': 'translate(-50%, -50%)',
-			'display': 'none'
+		$('#story').promise().done(function(){
+			$('#story').after('<div class="photos"></div>');
+			$('.photos').append('<img src="Q版无水印.jpg" alt="Q版无水印">');
+			$('.photos').append('<img src="Q版有水印.jpg" alt="Q版有水印">');
+			$('.photos').append('<img src="有水印.jpg" alt="有水印">');
+			$('.photos').append('<img src="无水印.jpg" alt="无水印">');
+
+			// 计算图片居中位置
+			var photosWidth = $('.photos').width();
+			var windowWidth = $(window).width();
+			var marginLeft = (windowWidth - photosWidth) / 2;
+			$('.photos').css('margin-left', marginLeft + 'px');
 		});
-		$('.photos img').css({
-			'margin': '10px',
-			'width': '200px',
-			'height': 'auto'
-		});
-		$('.photos').fadeIn('slow');
 	});
 });
