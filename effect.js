@@ -196,17 +196,16 @@ $(document).ready(function(){
         setTimeout(function() {
             // 创建包含照片的滑块
             $('#story').after('<div class="slideshow"></div>');
-            $('.slideshow').append('<img class="photo" src="Q版无水印.jpg" alt="Q版无水印">');
-            $('.slideshow').append('<img class="photo" src="Q版有水印.jpg" alt="Q版有水印">');
-            $('.slideshow').append('<img class="photo" src="有水印.jpg" alt="有水印">');
-            $('.slideshow').append('<img class="photo" src="无水印.jpg" alt="无水印">');
+            $('.slideshow').append('<img class="photo1" src="Q版无水印.jpg" alt="Q版无水印">');
+            $('.slideshow').append('<img class="photo2" src="Q版有水印.jpg" alt="Q版有水印">');
+            $('.slideshow').append('<img class="photo3" src="有水印.jpg" alt="有水印">');
+            $('.slideshow').append('<img class="photo4" src="无水印.jpg" alt="无水印">');
 
             // 设置照片样式
-            $('.photo').css('display', 'block'); // 设置照片为块级元素
-            $('.photo').css('margin', 'auto'); // 设置居中
-            $('.photo').css('margin-top', '20px'); // 设置上方留白
-            $('.photo').css('width', '400px'); // 设置宽度
-            $('.photo').css('height', 'auto'); // 自动调整高度，保持比例
+            $('.photo1').css('display', 'block').css('margin', 'auto').css('margin-top', '20px').css('width', '400px').css('height', 'auto');
+            $('.photo2').css('display', 'block').css('margin', 'auto').css('margin-top', '20px').css('width', '400px').css('height', 'auto');
+            $('.photo3').css('display', 'block').css('margin', 'auto').css('margin-top', '20px').css('width', '400px').css('height', 'auto');
+            $('.photo4').css('display', 'block').css('margin', 'auto').css('margin-top', '20px').css('width', '400px').css('height', 'auto');
         }, 10000); // 添加10秒延迟
     });
 });
